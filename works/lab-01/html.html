@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lab 1</title>
+    <style>
+
+        body {
+          padding-left: 10px;
+        }
+        .nav-list {
+          display: flex;
+          list-style-type: none;
+          gap: 20px;
+        } 
+    </style>
+
+  </head>
+  <body>
+    <nav>
+      <ul class="nav-list">
+        <li>Datos</li>
+        <li>Intro</li>
+        <li>Preguntas</li>
+      </ul>
+    </nav>
+
+    <h1>HTML</h1>
+
+    <h2>Datos</h2>
+
+    <ul>
+       <li><strong>Nombre:</strong> Alejandro Benítez Bravo</li>
+       <li><strong>Matrícula:</strong> A01712835</li>
+       <li><strong>Correo:</strong> a01712835@tec.mx</li>
+     </ul> 
+
+    <h2>Intro</h2>
+
+    <p>
+      Este es un pequeño documento html que demuestra el uso de las principales etiquetas utilizadas en <strong>HTML5</strong>. No me gusta particularmente la parte del front end en un proyecto, pero estoy abierto a aprender más sobre esto, quizá sea algo que me interese.
+    </p>
+
+    <p>
+      Actualmente prefiero enfocarme en otras cosas, cosas que requieran de menos GUI. Desde el semestre pasado he explorado el lenguaje de programación Go, que es mayormente utilizado en CLI's y en servidores de backend. Me gusta bastante ya que se parece a C en su simplicidad.
+    </p>
+
+    <img src="https://camo.githubusercontent.com/99ff5593d0cf327a76225b5c99d4388c890936549e89b46ac019259c106f8c4f/68747470733a2f2f7261772e6769746875622e636f6d2f676f6c616e672d73616d706c65732f676f706865722d766563746f722f6d61737465722f676f706865722e706e67" alt="Gopher" width="200">
+
+    <p>También he estado explorando otros lenguajes, particularmente lenguajes funcionales. No son la cosa más popular, y rara vez son utilizados en producción real, pero me parecen muy interesantes. Actualmente he explorado Scheme, Haskell y Ocaml. Elixir es una mezcla interesante, y Rust cuenta con bastantes ideas funcionales, pero no los he explorado lo suficiente. Algún día me daré a la tarea de aprender APL. Me gustaría crear un proyecto con ellos, pero es un poco retador utilizarlos para algo real.</p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/1280px-Haskell-Logo.svg.png" alt="Haskell Logo" width="200">
+  </body>
+
+  <h2>Preguntas</h2>
+
+  <ol>
+    <li>
+      <strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong><br>
+      Se podría decir que el internet es la <em>infrestructura</em>, y la World Wide Web es el <em>software</em>, o servicio, que corre dentro de esta infrestructura. El internet es lo que permite a cualquier computadora en el mundo conectarse con otra, y la WWW es el conjunto de información a la que se puede acceder a través del internet. <a href="https://www.geeksforgeeks.org/computer-networks/difference-between-internet-and-www/">Referencia.</a>
+    </li>
+
+    <li>
+      <strong>¿Cuáles son las partes de un URL?</strong><br>
+      Una URL, Uniform Resource Locator, contiene varias partes. La primera es el protocólo, el cual, naturalmente, especifíca el protocolo que se utilizará para comunicarse. Usualmente se observa <code>http</code> o <code>https</code>, la versión segura.<br> Después sigue el dominio o ip. Usualmente se observa un dominio, ya que es mucho más fácil manejar dominios, sin embargo también se puede utilizar la ip. Esta determina la <em>dirección</em> de la computadora a la que se está intentando comunicar.<br> Los anteriores elementos son obligatorios, sin embargo, el puerto, que es el siguiente elemento, no es obligatorio. Este simplemente determina el puerto al que se está tratando de accesar de la computadora. HTTP utiliza el puerto 80 convencionalmente, y HTTPS el 443.<br> Después sigue el path, que determina el lugar en el que la información se encuentra dentro de los servidores. En páginas estáticas convencionalmente esto refleja la distribución de folders y directorios del proyecto. En páginas más complejas esto ya no se cumple y es más moldeable.<br> El siguiente y final elemento es lo que se conoce como parámetros. Estos son información adicional que se especifica dentro de la URL, y funcionan como un mapa con una llave y un valor. <a href="https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/">Referecia.</a>
+    </li>
+
+    <li>
+      <strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong><br>
+      <ul>
+        <li><strong>GET:</strong> Recibe datos del servidor en forma de una respuesta. No modifica el estado.</li>
+        <li><strong>POST:</strong> Envía datos al servidor, usualmente para crear algo nuevo.</li>
+        <li><strong>PUT:</strong> De igual manera envía datos al servidor, pero actualiza lo ya existente dentro del servidor.</li>
+        <li><strong>HEAD:</strong> Recibe datos como GET, pero tiene la diferencia de que la respuesta recibida no incluye el cuerpo, simplemente los headers de la respuesta.</li>
+        <li><strong>PATCH:</strong> Muy similar a PUT en el que actualiza recursos, sin embargo PUT actualiza el recurso completo, mientras PATCH solo lo actualiza parcialmente.</li>
+        <li><strong>DELETE:</strong> Elimina el recurso especificado.</li>
+      </ul>
+      <a href="https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/">Referencia.</a>
+    </li>
+
+    <li>
+      <strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong><br>
+      Se utiliza un POST, ya que se tiene que enviar el usuario y la contraseña actual al servidor, algo que, antes de la autenticación, no existe aún.
+    </li>
+
+    <li>
+      <strong>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong><br>
+      Se utiliza un GET, porque dado servidor envía información al cliente para mostrar el html, css y js que conforma la página web.
+    </li>
+
+    <li>
+      <strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong><br>
+      El código 200 significa exitoso, todo ocurrió sin ningún error.
+    </li>
+
+    <li>
+      <strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong><br>
+      No debería de ser, ya que esto significa que el cliente trató de ingresar a una url que no existe. Esta dentro del conjunto de códigos 400s que representan errores de parte del cliente.
+    </li>
+
+    <li>
+      <strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong><br>
+      Sí, es responsabilidad del desarrollador, ya que el código 500 representa un error genérico de parte del servidor.
+    </li>
+
+    <li>
+      <strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong><br>
+
+    </li>
+  </ol>
+</html>
