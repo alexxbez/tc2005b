@@ -176,3 +176,5 @@ Any project must divided in objectives. But first it is important to identify th
   - Communication (between other systems)
 
 Extensible is a system that is able to grow by implementing more. Scalable is that the system grows just by inputing more computer power.
+
+*Question*: How relevant is it nowadays the PMBOK and are big companies actually using it?
