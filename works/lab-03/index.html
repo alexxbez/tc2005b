@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lab 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>&lt;CSS/&gt;</h1>
+<article>
+  <div class="left">
+    <div class="datos box">
+      <hr>
+
+      <h2>## Datos</h2>
+
+      <ul>
+         <li><strong>Nombre:</strong> Alejandro Benítez Bravo</li>
+         <li><strong>Matrícula:</strong> A01712835</li>
+         <li><strong>Correo:</strong> a01712835@tec.mx</li>
+       </ul> 
+    </div>
+
+    <div class="intro box">
+     <hr>
+    <h2>## Intro</h2>
+      <p>
+        Este es un pequeño documento html que demuestra el uso de las principales etiquetas utilizadas en <strong>HTML5</strong>. No me gusta particularmente la parte del front end en un proyecto, pero estoy abierto a aprender más sobre esto, quizá sea algo que me interese.
+      </p>
+    </div>
+
+    <div class="yo box last-box">
+      <hr>
+      <h2>## Yo</h2>
+
+      <p>
+        Actualmente prefiero enfocarme en otras cosas, cosas que requieran de menos GUI. Desde el semestre pasado he explorado el lenguaje de programación Go, que es mayormente utilizado en CLI's y en servidores de backend. Me gusta bastante ya que se parece a C en su simplicidad.
+      </p>
+      <hr class="last-line">
+    </div>
+
+    <div class="gopher box">
+      <hr>
+      <pre style="font-family: monospace; color: white;" class="gopher-side">
+         ,_---~~~~~----._         
+  _,,_,*^____      _____``*g*"*, 
+ / __/ /'     ^.  /      \ ^@q   f  
+[  @f | @))    |  | @))   l  0 _/   
+ \`/   \~____ / __ \_____/    \    
+  |           _l__l_           I   
+  }          [______]           I  
+  ]            | | |            |  
+  ]             ~ ~             |  
+  |                            |   
+   |                           |   
+</pre>
+
+      <pre style="font-family: monospace; color: white;" class="gopher-front">
+         ,_---~~~~~----._         
+  _,,_,*^____      _____``*g*"*, 
+ / __/ /'     ^.  /      \ ^@q   f  
+[  @f |   (@)  |  |  (@)  l  0 _/   
+ \`/   \~____ / __ \_____/    \    
+  |           _l__l_           I   
+  }          [______]           I  
+  ]            | | |            |  
+  ]             ~ ~             |  
+  |                            |   
+   |                           |   
+</pre>
+    </div>
+
+    <div class="yo2 box">
+      <hr>
+      <p>También he estado explorando otros lenguajes, particularmente lenguajes funcionales. No son la cosa más popular, y rara vez son utilizados en producción real, pero me parecen muy interesantes. Actualmente he explorado Scheme, Haskell y Ocaml. Algún día me daré a la tarea de aprender APL. Me gustaría crear un proyecto con ellos, pero es un poco retador utilizarlos para algo real.</p>
+    </div>
+
+  <div class="haskell box last-box">
+    <hr>
+      <pre style="font-family: monospace; color: white;">
+ _____ ______                      
+ \    \\     \                     
+  \    \\     \                    
+   \    \\     \ _____________     
+    \    \\     \\            \    
+     \    \\     \\____________\   
+      \    \\     \ _____________  
+      /    //      \\            \ 
+     /    //        \\____________\
+    /    //    /\    \             
+   /    //    /  \    \            
+  /    //    /    \    \           
+ /____//____/      \____\          
+</pre>
+  <hr class="last-line">
+  </div>
+
+  <div class="preguntas box last-box">
+    <hr>
+    <h2>## Preguntas</h2>
+
+    <ol>
+      <li>
+        <strong>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de <code>!important</code> en un CSS?</strong><br>
+          Debería de ser evitado lo más posible ya que genera varios problemas de lógica al poder sobrescribir los componentes de abajo.
+      </li>
+      <li>
+        <strong>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</strong><br>
+        Debido a que varias imagenes tienen derechos de autor, la resolución puede ser baja y el contraste con el texto puede dificultar la lectura.
+      </li>
+      <li>
+        <strong>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</strong><br>
+        Recomendaría <code>%</code> ya que acomoda a una página más responsive, pero preferiría el uso de <code>rem</code>.
+      </li>
+      <li>
+        <strong>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</strong><br>
+        Debido a que requiere de menos información (whitespace, comentarios) lo cuál lo hace más ligero y rápido. <a href="https://www.cloudflare.com/learning/performance/how-to-minify-css/">Referencia</a>.
+      </li>
+    </ol>
+    <hr class="last-line">
+  </div>
+   </div> 
+
+   <div class="right">
+     <div>
+      <pre id="donut"></pre>
+     </div>
+     <p>
+     A Spinning Donut <br>
+    <em>This donut is not my own work, <br>if you're interested check out</em> <a href="#">this</a>.
+     </p>
+   </div>
+</article>
+<script>
+const pre = document.getElementById("donut");
+
+let x = 1760,
+    z = 0,
+    y = 0;
+
+setInterval(() => {
+  z += 0.07;
+  y += 0.03;
+
+  const a = [...new Array(x)].map((a, r) =>
+    r % 80 === 79 ? "\n" : " "
+  );
+
+  const r = new Array(x).fill(0);
+
+  const t = Math.cos(z),
+        e = Math.sin(z),
+        n = Math.cos(y),
+        o = Math.sin(y);
+
+  for (let s = 0; s < 6.28; s += 0.07) {
+    const c = Math.cos(s),
+          h = Math.sin(s);
+
+    for (let s = 0; s < 6.28; s += 0.02) {
+      const v = Math.sin(s),
+            M = Math.cos(s),
+            i = c + 2,
+            l = 1 / (v * i * e + h * t + 5),
+            p = v * i * t - h * e,
+            d = 0 | (40 + 30 * l * (M * i * n - p * o)),
+            m = 0 | (12 + 15 * l * (M * i * o + p * n)),
+            f = 0 | (8 * ((h * e - v * c * t) * n - v * c * e - h * t - M * c * o));
+
+      const index = d + 80 * m;
+
+      if (m < 22 && m >= 0 && d >= 0 && d < 79 && l > r[index]) {
+        r[index] = l;
+        a[index] = ".,-~:;=!*#$@"[f > 0 ? f : 0];
+      }
+    }
+  }
+
+  pre.innerHTML = a.join("");
+}, 50);
+</script>
+    </body>
+
+  <footer>
+    Editor de texto utilizado: <a href="https://neovim.io/">Neovim</a>.
+  </footer>
+</html>
