@@ -44,55 +44,62 @@ Quieren una solución integral personal. Evitar limitantes.
 
 Apoyo con el diseño.
 
-== PPG
+== Necesidad
 
-*Ariel Lugo* *Erick Ortega* 
+El objetivo principal es fortalecer la relación con su comunidad, e incrementar la lealtad de los consumidores. La experiencia del cliente es muy importante. 
 
-Pinturas. 
+== Módulos
 
-Sistema de gestión de artículos y reservas.
+=== Menú
 
-- administrar articulos con caracteristicas basicas
-- visualizar el catalogo disponible
-- reservas de articulos y gestionarlas (correo, folios)
-- tiempos
-- carrito
-- contidad y productos, nada mas
+Debe de ser muy customizable, dependiendo de lo que quiero y que le quiero poner el menu cambia. Yo puedo armar mi propia crepa. Incluso manejar toppings o ingredientes de temporada. Debe de haber dos modelos de menu de crepas
 
-reqs
+- Arma tu crepa
+- Crepas predefinidas que pueden ser modificadas
 
-- responsivo
-- seguridad basica
-- envio de correos
-- generacion de folios
+Proveen cafe, crepas, y waffles. 
 
-== Change
+=== Administración
 
-*Bernardo Laing* (442 249 7177)
+Poder modificar precios, ingredientes, usuarios, de temporada, horarios de atención, 
 
-Impacto social. Peticiones, campañas.
+=== Experiencia
 
-Petición -> comparte -> responder o tomar decisiones -> termino / declara victoria
+Primero era un modelo _to go_, pero no funcionaba tan bien. Ahora funciona como un restaurante, llegan, menus, comandean. 
 
-Problema: informacion dispersa
+Si le gustaría poder educar a su cliente a poder ordenar por medio de una aplicación.
 
-proyectos, avances, logros, trabajo diario que deberia ser compartida no lo es
-jira, *slack*, confluence y google docs
+Son mayormente mujeres, y si son hombres son es porque vienen con su pareja. Es en un casona histórica de Mazatlán. 
 
-con esa informacion se dan a conocer los logros, se toman desiciones y se ejecutan evaluaciones (personal, muy importante). se recopila la informacion de cada integrante para las evaluaciones
+No quiere cambiar su tipo de venta. Hay un prepa cerca y muchos van, por lo que estaría bien que los chavos puedan utilizarlo. No se quiere alejar del cliente, se quiere acercar por medio de la aplicación. 
 
-se pierden horas de trabajo buscando esta informacion, una o dos horas por persona
+Saber del cliente, saber su nombre, si se fue de viaje, tener ese acercamiento con el cliente y la aplicación debe poder complementar eso. 
 
-gestion de informacion
+Pedidos caen a un sistema que hace un sonidito especial, y manualmente se ingresa a la comanda. Tener una ipad a full volumen para reconocer que es del sistema. Sería bien tener un pedido que sepa quien estaba recibiendo esas comandas para saber si hubo algún error. 
 
-- gestionar usuarios y equipos
-- bitacora de avances (registro diario de avances, tareas) (plataforma facil)
-- gestion de r
-- compartir informacion
+=== Diseño
 
-consitencia con su forma de trabajo
+Girly, enfocado a la mujer. Pero, fácil de usar y amigable a los hombres. 
 
-talleres
+=== Lealtad 
+
+Tienen una tarjetita que va puntuando. Llevar el control de saber que consume, invitarlo a volverlo a consumir. Se tiene que tener información para poder dar recomendaciones y mensajes estratégicos. Tiene que ser personalizado, por ejemplo descuentos en cumpleaños. En consumo de x cantidad puedes participar en rifas, etc. 
+
+=== Métricas
+
+Poque no se mueven algunas crepas. De dinero no se necesita mucho. Se enfoca más en la visita del cliente, si se la pasó bien, etc.
+
+== Preguntas
+
+- No me queda muy claro a que se refieren con un portal administrativo.
+- Que tipo de recompesa quieren ofrecer, puntos, descuentos, productos gratis
+- La idea es que hayan membresias
+- El menu cambia segun horario
+
+== Notas 
+
+Va a haber muchas oportunides para conectar con terceros. Apple pay, google wallet, whatsapp.
+
 
 = Project Management
 
@@ -178,3 +185,58 @@ Any project must divided in objectives. But first it is important to identify th
 Extensible is a system that is able to grow by implementing more. Scalable is that the system grows just by inputing more computer power.
 
 *Question*: How relevant is it nowadays the PMBOK and are big companies actually using it?
+
+== Addendum
+
+- The people *interested* in the project are those who benefit and are affected by it.
+- *Project agreement* is the document that formalises what the goals, scope and overall things that will be done in the project, which includes the time. It must also outline what the project will contain and what it will not.
+
+= Information Systems
+
+== An Introduction
+
+#blockquote[An information system is defined as a set of interrelated components that compile, process, store and distribute information with the goal of decision taking and control over organization.]
+
+=== Definitions
+
+- *Data:* Is the symbolic representation of an attribute or characteristic of an entity. It does not have semantic meaning but may be conveniently processed into a more valueable thing.
+
+- *Information:* Is an organized set of data that has been processed and thus has semantic meaning.
+
+- *Input:* Is the information (data?) produced by the user. An input also can be produced by networks, etc.
+
+- *Processing:* Are the actions that take an entry and generate useful information for the user.
+
+- *Output:* Is the information that the computer will show to the user.
+
+- *Feedback:* Is the added value that allows users to take actions.
+
+=== Architecture
+
+It is divided in mainly five levels (types), each one with a specific user in mind.
+
++ *Transaction Processing System (TPS):* Help in the daily activities of a enterprise. They are the heart of the information system. It comprises the data collection, data manipulation, storage, and report production. 
+
+  Its goal is to process data, be exact and correct, mantain data integrity, produce oportune reports and documents, and overall improve laboral efficiency. It, thus, has a big volume I/O, needs high storage capabilities, and impacts a high number of user (specially when there is an error and everyone is stroke). 
+
+  A transaction means sort of CRUD, create, recover, update and delete information. There are three processing types:
+
+  - In line: In the moment as it arrives, though it does not matter if it lags behind (register user).
+  - In batch: Waits a bit to gather up and then processes.
+  - Realtime: Processes instantly as it arrives, where the time is critical (air traffic).
+
++ *Office Automation Systems (OAS):* Provide help for daily activities to increase employee efficiency of those who work with the information (e.g. word processors, email, schedules, etc.).
+  
+  *Knowledge Work Systems (KWS):* Provide help for specialized employees in the creation and integration of new knowledge for the institution, for instance software that aids architects in blueprint design.
+
++ *Management Information Systems (MIS):* A collection of people, procedures, databases, and devices needed to display information to the managers and decision takers so that they may achieve the objectives. They seek to show a general vision of how things look and how and which operations take place. 
+
+  These systems produce reports, which may be scheduled, demanded or exceptional (when a critical situation creates the need).
+
+  *Decision Support Systems:* It is similar to a MIS, but its purpose is to take decisions regarding specific problems, semi-structured problems or non-structured ones. It also gathers information from many places, but it must also be able to perform complex and sophisticaded analysis using statistical packages. It must also be visual. A DSS serves as a _what if_ visualizer, allowing the user to see the impact of hypothetical cases. 
+
++ *Group Decision Support Systems (GDSS):*  This system aids group decision taking. Its design is special, as it must encourage creative thinking and effective communication. It must also be easy to learn and use, while also being flexible enough to acommodate for the different kinds of people. It should also have some degree of anonymity in order for to avoid source bias.
+
+  *Expert Systems (ES):* A system that acts as a human expert in certain field or area. It helps identifying issues, predicting future events and aiding in the design of new products.
+
++ *Executive Information Systems (EIS):* Encompasses all critical information that influences decision taking. It aids non structured decision taking with KPIs graphicly. It uses quality information, reduced use of the keyboard, secure access, fast response time, remote access and perfect fitted disign.
