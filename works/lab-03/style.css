@@ -72,6 +72,21 @@ em {
   text-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
 }
 
+a {
+  color: white;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 0 0 1rem rgba(255, 255, 255, 0.7);
+}
+
+footer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .left {
   display: grid;
   grid-template-columns: 32rem 32rem 32rem;
