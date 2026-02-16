@@ -186,6 +186,70 @@ Extensible is a system that is able to grow by implementing more. Scalable is th
 
 *Question*: How relevant is it nowadays the PMBOK and are big companies actually using it?
 
+== Scope
+
+It is composed of all, and only those, necessary activities, works and processes that guarantee a successful project. It includes:
+
+- Initiation
+- Scope planning
+- Scope definition
+- Scope verification
+- Scope change control
+
+The scope is the aggregate of the _products_ and _services_ that need to be delivered, and defines what should be included but also what should not be included. These objectives are written in a SMART format.
+
+But before diving into this subject, let's differentiate between _product scope_ and _project scope_. 
+
+Product scope deals with the characteristics and functionalities that should be included in a given product of system. The success of it is verified with the requirements (functional, nonfunctional, business, etc.). 
+
+On the other hand, project scope deals with the work and tasks that need to be done in order to deliver the product with said characteristics and functionalities. Its success is verified with th project plan.
+
+=== Initiation
+
+Is the formal authorization of a new project of phase. It guarantees organizational support for the project. Among other things it defines the high level objectives, secures the necessary resources and approvals, confirms the alignment of the project with the strategic objectives, and assigns a project boss.
+
+Since there may be many project ideas, only the best one should be considered. Therefore a method of priorization is necessary. The available methods include: focusing on general necessities, cathegorizing the projects, financial analysis, and punctuation methods.
+
+Once the project has been selected it must be formalized so that everyone involved in the project is on the same page. This formalization must contain:
+
+- Objectives
+- Success criteria
+- Restrictions
+- Assumptions
+- Roles and responsibilities
+
+*Is this formalization the same as the project charter or a separate document?*
+
+There must be a project charter that recognizes the project and informs about the necessities of the project and the description of the product. This charter must have authority, and therefore must be signed by a high ranking official (xd).
+
+=== Scope Planning
+
+The development of a written scope statement that will serve as the foundation for future decisions regarding the project. It also establishes an agreement between the project and client in order to identify both the objectives as well as the things that will be delivered.
+
+This statement must include (a) a project justification, (b) the project product, (c) the things to be delivered, and (d) the project objectives (written in a SMART method).
+
+The scope management plan must describe how de project will be managed and how scope changes may be integrated. It is part of the global project plan. It must include the estability expectations and a clear description as to how scope changes will be identified and classified.
+
+== Scope Definition
+
+Now the work must be divided into several more manageable pieces. Here we seek to 
+
+- Improve the presicion of estimates for time, cost, and resources.
+- Define the baseline by which the project will be compared and controlled.
+- Help clearly define the responsibilities of each task.
+
+A deliverable is every produc, result or measurable element, tangible and verificable that will be delivered.
+
+== Work Breakdown Structures
+
+no idea what this is
+
+It is the process of dividing the deliverables and work in smaller and more manageable products. It is a hierarchical decomposition delivery oriented. 
+
+A work package is the lowest level. We now our division has gotten there when we can (a) state when it begins and ends, (b) estimate costs and efforts, and (c) monitor and control it.
+
+The detail level must be enough, 
+
 == Addendum
 
 - The people *interested* in the project are those who benefit and are affected by it.
@@ -240,3 +304,5 @@ It is divided in mainly five levels (types), each one with a specific user in mi
   *Expert Systems (ES):* A system that acts as a human expert in certain field or area. It helps identifying issues, predicting future events and aiding in the design of new products.
 
 + *Executive Information Systems (EIS):* Encompasses all critical information that influences decision taking. It aids non structured decision taking with KPIs graphicly. It uses quality information, reduced use of the keyboard, secure access, fast response time, remote access and perfect fitted disign.
+
+
