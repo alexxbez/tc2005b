@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fast Fourier Transform</title>
+    <link href="tufte.min.css" rel="stylesheet">
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <article>
+      <h1>Fast Fourier Transform</h1>
+      <p class="subtitle">Alejandro Benítez</p>
+      <section>
+        <p>It is difficult to go through a calculus course without, at the very least, hearing about this. The Fourier Transform is one of the most important, and frankly beautiful, mathematical expressions. This function deals mainly with waves, and the informed reader will know the sheer presence waves have on many physics phenomena.</p> 
+
+        <p>This transform allows one to decompose a wave into its more fundamental parts, thereby facilitating not only its inspection, but also its manipulation.</p>
+
+        <p>Take for instance the following graph.</p>
+
+        <figure>
+          <label for="mn-sinusoidal-graph" class="margin-toggle"></label>
+          <input type="checkbox" id="mn-sinusoidal-graph" class="margin-toggle">
+          <span class="marginnote">A complex sinusoidal wave.</span>
+          <img src="img/graph-1.png" alt="Sinusoidal graph">
+        </figure>
+        
+        <p>The graph in the figure appears to be rather complex, although in reality it is but four different sine waves summed together. </p>
+
+        <p>The process by which a Fourier transform allows us to decompose waves such as this one is akin to the idea of unmixing a color paint. Perhaps we would like to know what type of pink was used on a certain painting. We could guess the amount of white, red, perhaps gray and orange, used, though the task would indeed be very dauting for someone not used to painting.
+</p>
+
+        <p>Unlike painting, however, the Fourier Transform allows us to have an algorithmic way of dissecting and decomposing a wave in order to know the exact proportions of waves needed to recreate our target wave.</p>
+
+        <section>
+          <h2>The Math Behind</h2>
+
+          <p>The Fourier Transform is a somewhat hard topic to explain, and it is out of the scope of this document. There are a plethora of resources <label for="sn-three-blue" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-three-blue" class="margin-toggle"><span class="sidenote">3Blue1Brown's <a href="https://youtu.be/spUNpyF58BY?si=XkwBWF-7FSwJXyC3">video</a> is a truly great introduction.</span> to learn and better understand the inner workings of the Fourier transform. Here we will only glaze the necessary concepts.</p>
+
+          <p>
+            The Fourier Transform is defined as 
+            \[ \hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)e^{-2\pi ix\xi}\,dx \]
+          </p>
+
+          <p>The integral, although seemingly complex, is actually the easiest part to explain. It essentially samples sections of the wave. We could sample, say, five, and hope we get a close enough result. We could ramp up to 100 and get a somewhat accurate one. Or we could sample every point, and thus get the exact result. That's what the integral does.</p>
+
+          <p>
+            The \( e^{-2\pi ix\xi} \) part is the actual hard part to understand, even harder with no visuals <label for="sn-visuals" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sn-visuals" class="margin-toggle"><span class="sidenote">I am too lazy to make any visuals. Also, this homework isn't even about this!</span>. In a nutshell, it winds the graph in a circular motion and finds the sum of all the wound up points looking for spikes. Those spikes would be the component frequencies.
+          </p>
+
+          <p>Now that we fully and wholly understand what the Fourier Transform is, let's look at the Fast Fourier Transform.</p>
+        </section>
+
+        <section>
+          <h2>Fast Fourier Transform</h2>
+
+          <p>It's the algorithm that computes the Fourier Transform. Except it does it fast. Thank you for coming to my TED Talk!</p>
+        </section>
+
+              </section>
+      <section>
+        <h2>Material Design</h2>
+
+        <blockquote cite="https://m3.material.io/">
+          <p>Material Design 3 is Google’s open-source design system for building beautiful, usable products.</p> 
+          <footer><a href="https://m3.material.io/">Google's Material Desing</a></footer>
+        </blockquote>
+
+        <p>Material design is UI design systen developed by Google. If offers a complete and flexible system that does not compromise on its usability and user experience.</p>
+
+        <p>It has a big focus on scalability and reusability, providing a modular structure with components that allows for changes in layout withou affecting the underlying structure.</p>
+
+        <p>The main idea behind material design is precisely <em>material</em>, that is, the surfaces and elements that compose the main UI. These material have their own x, y and z components, which mean that they may be on top of others casting shadows or popping off <label for="sn-pop-off" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-pop-off" class="margin-toggle"><span class="sidenote">Of course not out of the screen, it just gives the impression of doing so.</span> the screen.</p>
+
+        <p>Colors also play a big role on material design, and so do typography and even intentional whitespace. There is a big emphasid on graphic and eye-catching design <label for="sn-eye-catching" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-eye-catching" class="margin-toggle"><span class="sidenote">A complete opposite to this design.</span>.</p>
+
+        <p>And to direct user attention, material design utilized motion. Transitions are smooth, not jarring, in such a way that it guides the user's focus from one place to the next in exactly the way the designer intended.</p>
+
+        <p>Overall it is a really popular <label for="sn-popular" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-popular" class="margin-toggle"><span class="sidenote">Though you may realize by the style of this page my lack of interest on it.</span> design pattern and a really effective one indeed. When trying to decide a style, material design should be considered one of the top choices.</p>
+      </section>
+    </article>
+  </body>
+</html>
