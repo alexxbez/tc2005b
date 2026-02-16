@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transformada de Fourier</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Transformada de Fourier Rápida</h1>
+    
+    <p>La transformada de Fourier es uno de los conceptos matemáticos más importantes. Escencialmente lo que hace es transformar el dominio de la función de tiempo a frecuencia. La transformada de Fourier rápida es una implementación en específico para puntos discretos. Este algoritmo es utilizado en varios ámbitos como el audio, donde se utiliza para la sínteses aditiva, y correcciones de tono.</p>
+
+    <p>Para utilizar el algoritmo implementado puedes escribir los números que conformarían tu función hipotética separados por una coma, por ejemplo <code>5, 245, 846, 456</code> etc.</p>
+
+    <form id="form">
+      <label for="data">Data:</label>
+      <input type="text" id="data">
+      <button type="button" onclick="getVals()">Enviar</button>
+    </form>
+  
+    <p id="output"></p>
+    
+    <h2>Preguntas</h2>
+
+    <ol>
+      <li>
+        <strong>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</strong><br>
+        Las semejanzes son sus nombres, pero hasta ahí llegan. Realmente son lenguajes muy diferentes. Otra similitud podría ser su sintáxis inspirada en c. Por otro lado, sus diferencias son varias. Java es compilado mientras que JavaScript no. De igual manera Java es tipado y JavaScript no lo es. Java es orientado a objetos y JS es multiparadigma.
+      </li>
+      <li>
+        <strong>¿Qué métodos tiene el objeto Array? (Menciona al menos 5*)</strong><br>
+<ul>
+<li><code>forEach</code> que permite recorrer un arreglo de forma sencilla</li>
+<li><code>push</code> que permite agregar un elemento al arreglo</li>
+<li><code>pop</code> que permite eliminar el último elemento de un arreglo</li>
+<li><code>unshift</code> que permite agregar un elemeto al inicio del arreglo</li>
+<li><code>shift</code> que permite eliminar el primer elemento dei arreglo</li>
+</ul>
+      </li>
+      <li>
+        <p><strong>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</strong></p>
+<ul>
+<li><code>getDate</code> retorna el día del mes</li>
+<li><code>getDate</code> retorna el día de la semana 0-6</li>
+<li><code>getFullYear</code> retorna el año en cuatro digitos</li>
+<li><code>getMilliseconds</code> retorna los millisegundos</li>
+<li><code>`getSeconds</code> retorna los segundos</li>
+</ul>
+      </li>
+      <li>
+<p><strong>¿Cómo se declara una variable con alcance local dentro de una función?</strong></p>
+<p>Se declara utilizando la palabra clave <code>let</code></p>
+      </li>
+      <li>
+
+<p><strong>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</strong></p>
+<p>Es peligroso ya que si se modifica una variable global no se puede saber qué funxión fue la que modificó a la variable, lo que luego puede causar muchos problemas inesperados.</p>
+      </li>
+    </ol>
+
+    <script src="fourier.js"></script>
+  </body>
+</html>
