@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html id="page">
+   <head>
+      <title>Password Validator</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;"/>
+      <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" ></script> 
+   </head>
+   <body>
+<style>
+    body {
+        background-image: url(https://images.unsplash.com/photo-1634804306598-f2efe3ead034?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-size: cover;
+        backdrop-filter: blur(5px);
+    }
+    .intro-card {
+        background-color: rgba(255, 255, 255, 0.9);
+        max-width: 80%;
+        min-width: 350px
+    }
+    .logo {
+        width: 150px
+    }
+</style>
+<div class="u-flex u-center h-100p">
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="space"></div>
+    <div class="intro-card frame px-3 py-4">
+        <div class="frame__body">
+            <div class="u-flex u-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/1803/1803612.png" class="logo" />
+                <div class="space"></div>
+            </div>
+            <h3><span></span>Password Validator 3000<span class="info text-primary uppercase">alexxbez</span></h3>
+      <p>Valida la seguridad de tu contraseña.</p>
+            <div class="input-control">
+    <input type="text" placeholder="Password" id="passwordInput">
+    <div class="space"></div>
+
+    <p id="output"></p>
+</div>
+
+
+            <div class="space"></div>
+        </div>
+    </div>
+    
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+
+    <div class="intro-card frame px-3 py-4">
+        <div class="frame__body">
+            <div class="u-flex u-center">
+                <div class="space"></div>
+            </div>
+            <h3><span></span>Preguntas</h3>
+      <p>Respuestas a las preguntas de la actividad.</p>
+
+<div class="tree">
+    <div class="tree-item">
+        <input type="checkbox" id="tree1" class="u-none">
+        <label class="tree-item-header" for="tree1">
+            <span class="icon">
+                                    <i class="fa fa-wrapper fa-chevron-right small" aria-hidden="true"></i>
+                                </span> ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?
+        </label>
+        <div class="tree-item-body">
+            <ul class="menu">
+                <li class="menu-item">Es buena práctica checar que los inputs sean válidos por diferentes razones. Primero, siempre es buena idea revisar la validéz de los inputs. Segundo, conviene más que los datos sean validados por la parte del cliente en vez de que el servidor tenga que hacer más trabajo. Tercero, JS es un lenguaje no (débilmente) tipado, por lo que no se pueden tener varios supuestos que se tienen con lenguajes (fuertemente) tipados. Cuarto, es más rápido ya que se reduce la necesidad de comunicarse varias veces entre el servidor.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="tree">
+    <div class="tree-item">
+        <input type="checkbox" id="tree3" class="u-none">
+        <label class="tree-item-header" for="tree3">
+            <span class="icon">
+                                    <i class="fa fa-wrapper fa-chevron-right small" aria-hidden="true"></i>
+                                </span> ¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?
+        </label>
+        <div class="tree-item-body">
+            <ul class="menu">
+                <li class="menu-item">Hay varias formas de desactivar las validaciones. Primero, se puede desactivar el javascript. También se puede utilizar las herramientas de desarrollador para modificar el html y eliminar las validaciones. E incluso se pueden utilizar herramientas como postman o curl para enviar directamente las peticiones de http.</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="tree">
+    <div class="tree-item">
+        <input type="checkbox" id="tree4" class="u-none">
+        <label class="tree-item-header" for="tree4">
+            <span class="icon">
+                                    <i class="fa fa-wrapper fa-chevron-right small" aria-hidden="true"></i>
+                                </span> Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?
+        </label>
+        <div class="tree-item-body">
+            <ul class="menu">
+                <li class="menu-item">Las validaciones de javascript del lado del cliente no son la capa de seguridad principal, son solo una capa de conveniencia para facilitarle el trabajo al servidor. El servidor, independientemente de esto, debería de asumir que todo dato es potencialmete malicioso, por lo que debe validar todo.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<script src="script.js"></script>
+   </body>
+</html>
