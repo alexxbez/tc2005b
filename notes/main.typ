@@ -1,6 +1,11 @@
 #import "@preview/ilm:2.0.0": *
 
-#set text(lang: "en")
+#set text(lang: "en", size: 10pt)
+
+#set page(
+  header-ascent: 16mm,
+  paper: "a4",
+)
 
 #show: ilm.with(
   title: [Software Construction and Decision Making],
@@ -248,7 +253,17 @@ It is the process of dividing the deliverables and work in smaller and more mana
 
 A work package is the lowest level. We now our division has gotten there when we can (a) state when it begins and ends, (b) estimate costs and efforts, and (c) monitor and control it.
 
-The detail level must be enough, 
+The detail level must be enough.
+
+== Context Diagram
+
+It helps us identifying the scope of the project, the people iterested and how data flows through the system.
+
+== Project Charter
+
+Must include a description of the project, the people responsible, budget and time, what should be in the project and what not.
+
+There must also be milestones that help divide the project and get tangible results, as well as knowing exactly how bad you are developing.
 
 == Addendum
 
@@ -305,4 +320,29 @@ It is divided in mainly five levels (types), each one with a specific user in mi
 
 + *Executive Information Systems (EIS):* Encompasses all critical information that influences decision taking. It aids non structured decision taking with KPIs graphicly. It uses quality information, reduced use of the keyboard, secure access, fast response time, remote access and perfect fitted disign.
 
+== DB & DBMS
+
+Se puede pensar en una base de datos como una colección de archivos interrelacionados logicamente, cuyos datos han sido cuidadosamente diseñados para que estos archivos contengan la menor repetición de datos y hechos. 
+
+El uso de una base de datos es muy conveniente ya que nos permite trabajar con una mayor cantidad de datos, además de que se le puede dar una estructura bien diseñada para facilitar su uso.
+
+=== DBMS
+
+Un sistema de gestión de base de datos consiste en una colección de datos y un conjunto de programas para controlar esos datos. A la colección de datos interrelacionados se le denomina como la base de datos, y al conjunto de programas como el DBMS, que crea un entorno conveniente y eficiente para extraer y almacenar información de la base de datos.
+
+=== Objetivos
+
+- Eliminar la redundancia y la inconsistencia de los datos. El hecho de tener redundancia solo aumenta los costos de almacenamiento y acceso. Además, puede llevar a una inconsistencia de datos donde los diferentes registros contienen diferente información y no concuerden entre sí. 
+
+- Elimina la dificultad de acceso a la información. Las bases de datos proporcionan un sistema conveniente y eficiente para recuperar información, pero que a la vez es lo suficientemente generales para poder ser utilizado en varios lugares. 
+
+- Los datos están naturalmente relacionados.
+
+- Seguridad al acceder de manera concurrente.
+
+- Seguridad para evitar que cualquiera pueda acceder a la información. 
+
+- Integridad de los datos. Se pueden añadir restricciones a los datos dentro de la base de datos para asegurar que ciertas reglas se cumplan.
+
+- Crear copias y backups de la base de datos.:
 
