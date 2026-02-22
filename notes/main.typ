@@ -424,3 +424,31 @@ Estas son entidades distintas, por lo que un objeto no puede jugar el rol de amb
 - *Entidad atributo:* Son restricciones adicionales que existen entre lor atributos de una endidad. Algunos ejemplos de estas son restricciones de recursos humanos, ecológicas, de tiempo, instalaciones, transporte, recursos financieros, materiales, etc.
 
 *¿Cómo se especifican estos dentro del MER?*
+
+== Traslado de MER a Tablas
+
+Para poder llevar nuestro modelo a la realidad es necesario hacer una traducción del modelo entidad relación a algo más concreto, que en este caso llamaremos modelo relacional. Tal modelo se definirá de la siguiente manera:
+
+```
+nombre(columna1, columna2, columna3, ...)
+```
+
+Para reconocer la llave primaria de la tabla esta se subrayará, mostrando que la columna o conjunto de columnas representan una llave.
+
+=== Procedimiento de Transferencia
+
+Para cada entidad se define una *tabla* cuyas *columnas* corresponden uno a uno a los atributos de la entidad. De no existir un identificador en la tabla que garantice unicidad entonces se debe de agregar.
+
+Para las asociaciones con *cardonalidad 1:1* solo se tiene que agregar la llave primaria de una tabla en la otra. Es indistinto cual llave es agregada. 
+
+Para las asociaciones con *cardinalidad 1:N*, se debe de agregar la llave primaria de la entidad que ocurre varias veces en la entidad que solo ocurre una vez. Por ejemplo, si un profesor puede dar varios grupos pero solo uno puede dar un grupo, entonces la llave primaria del profesor debería de estar en cada grupo.
+
+Finalmente, para *cardinalidades de tipo N:N* se debe de crear una nueva tabla donde se encuentran las dos llaves primarias de ambas entidades, además de los atributos extra que se requieran. La llave primaria de esta tabla sería la concatenación de las llaves primarias de ambas entidades.
+
+=== Procedimineto para MER Extendido
+
+Las entidades con *relaciones ISA* son 1:1, sin embargo su mapeo es un caso particular de las relaciones 1:N. La llave primaria se encuentra en la entidad generalizadora (superclase o clase padre), y las entidades especializadoras (subclase o clase hija) simplemente comparten exáctamente la misma llave primaria. Se dice que las entidades generalizadoras heredan su llave primaria a las entidades especializadoras.
+
+Para el caso de las *entidades débiles*, la entidad fuerte de la que dependen le hereda su llave primaria, similar al caso anterior. Sin embargo, tal entidad débil ya tiene un identificador único, por lo que su llave primaria se vuelve la concatenación de la llave primaria heredada con el identificador original.
+
+Finalmente, el caso de los *roles* es muy similar. Secillamente se considera que es la misma entidad independiente del rol, y dentro de la llave foránea (que sería la llave primaria de una intidad igual) se especifíca el rol que tal entidad foránea juega. Para asociaciones de N:N se sigue el mismo procedimiento, en donde se crea una tabla extra.
