@@ -1,4 +1,5 @@
 #import "@preview/ilm:2.0.0": *
+#import "@preview/fletcher:0.5.2" as fletcher: diagram, node, edge
 
 #set text(lang: "en", size: 10pt)
 
@@ -346,3 +347,80 @@ Un sistema de gestión de base de datos consiste en una colección de datos y un
 
 - Crear copias y backups de la base de datos.:
 
+== Notación Modelo Entidad Relación (MER)
+
+#import fletcher.shapes: pill, parallelogram, diamond, hexagon, rect
+
+Es un método y diagrama que nos permite diseñar bases de datos de una buena manera. Un modelo entidad relación se compone de ciertos elemetos, los cuales son explicados a continuación.
+
+=== Entidades
+
+Representan el objeto básico de nuestro diagrama, y se refieren a cualquier objeto del mundo real sobre el cual queremos tener información. Se representa como un rectángulo.
+
+=== Asociaciones
+
+Representan la interrelación que existe entre las entidades del modelo.
+
+Se debe de procurar que los nombres de las asociaciones sean precisos, usualmente un solo verbo que describe la relación entre las entidades involucradas. Una asociación representa solo una forma en la que las entidades se relacionan, pero puede que dos entidades se relacionen de varias formas, por lo que de debe de especificar las distintad asociaciones que hay entre esas entidades.
+
+Adicionalmente, una asociación puede tener atributos descriptivos, lo que nos permite almacenar información extra acerca de el tipo de relación que se tiene.
+
+El grado de una asociación se refiere a la cantidad de entidades que participan en la relación. Esto también quire decir que se pueden tener varias entidades participando en una sola asociación. Sin embargo es aconsejable restringirlo a solo relaciones binarias.
+
+La cardinalidad es el número de elementos que participan en una asociación. Existen tres casos generales: asociaciones uno a uno (1:1), uno a muchos (1:N), y relaciones muchos a muchos (N:M).
+Para casos más específicos se puede establecer explícitamente el valor de N.
+
+Existen dos tipos de participación en una asociación. Primero se encuentra la parcial u opcional. Dentro de esta categoria no todas las instancias de una entidad tienen que estar relacinadas con la otra entidad. Se representan con una sola línea. Por otra parte, las asociaciones oblgatorias o parciales deben de estar siempre relacionadas. Se dice que existe una participación total. Se representan con dos líneas.
+
+=== Atributo
+
+Los atrbutos son la información que nos interesa recolectar. Son características y valores. Se le pueden representar como elipses y como una lista de los nombres de los atributos.
+
+El conjunto de valores que puede tomar un atributo se le llama dominio.
+
+Existen varios tipos de atributos:
+
+- *Simples o compuestos:* Los compuestos están formados por varios atributos, los almacenados no.
+- *Mono valuados o multivariados:* Los mono solo pueden almacenar un valor, los multi varios valores.
+- *Almacenados y derivados:* Los almacenados son almacenados. Los derivados no son almacenador, sino que se pueden obtener mediante cálculos y funciones sobre otros atributos que sí son almacenados.
+
+Un atributo muy importante y especial es el identificador de identidad. Puede ser uno o más atributos que identitican a una identidad como única.
+
+=== Metodología
+
++ Identificar entidades
++ Incorporar atributos
++ Determinar identificadores
++ Identificar asociaciones
++ Determinar cardinalidad
++ Incorporar atributos en las asociaciones
++ Verificar con los requerimientos
+
+== MER Extendido
+
+Estos son elemetos que buscan expandir y complementar el modelo relación entidad. Sin embargo se debe de tomar en cuenta que estos elementos no se deben de abusar, deberían de considerarse como excepciones y no siempre deben de estar presentes, muchas veces el modelo no extendido es suficiente.
+
+=== Roles
+
+Se utilizan cuando una entidad juega más de un rol en una asociación, ya sea consigo misma (recursiva) o con múltiples entidades. Se representan como un rectángulo pegado a la entidad.
+
+=== Relaciones ISA 
+
+Utilizan entidades generalizadoras (superclase), y entidades especializadoras (subclases).
+
+- Una *superclase* es todo tipo de entidad a la que se le definen subclases.
+- Una *subclase* es una entidad que cuenta con todos los atributos de la superclase, pero adicionalmente cuenta con atributos extra.
+
+Estas son entidades distintas, por lo que un objeto no puede jugar el rol de ambas, a diferencia de un rol donde esto sí sucede. La forma en la que estas entidades operan es muy similar a la herencia en el paradigma de programación irientada a objetos.
+
+=== Entidades fuertes y débiles
+
+- *Fuertes:* Son las entidades normales. Existen por sí mismas.
+- *Débiles:* Son las entidades que dependen de otras. Si la entidad en la que dependen desaparece, entonces la intidad débil también lo hace. Se identifican con un doble rectángulo.
+
+=== Restricciones de integridad adicionales
+
+- *Cotas de cardinalidad:* Son una extensión de la notación de cardinalidad. Se añade información acerca del número mínimo y máximo que pueden haber de asociaciones. Se delimitan de la forma `min:max`.
+- *Entidad atributo:* Son restricciones adicionales que existen entre lor atributos de una endidad. Algunos ejemplos de estas son restricciones de recursos humanos, ecológicas, de tiempo, instalaciones, transporte, recursos financieros, materiales, etc.
+
+*¿Cómo se especifican estos dentro del MER?*
