@@ -13,6 +13,11 @@ app.get("/", async (req: Request, res: Response) => {
   res.type("html").send(html);
 })
 
+app.get("/questions", async (req: Request, res: Response) => {
+  const html = await readFile("questions.html", "utf8");
+  res.send(html);
+})
+
 app.use(async (req: Request, res: Response) => {
   const html = await readFile("404.html", "utf8");
   res.status(404).send(html);

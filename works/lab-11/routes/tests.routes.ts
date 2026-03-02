@@ -1,8 +1,8 @@
-import express, { NextFunction, Request, Response } from "express"
-import { readFile, appendFile, stat, readdir, mkdir } from "node:fs/promises"
-import path from "path"
+import express, { NextFunction, Request, Response } from "express";
+import { readFile, appendFile, stat, readdir, mkdir } from "node:fs/promises";
+import path from "path";
 
-const router = express.Router()
+const router = express.Router();
 
 router.use(async (req: Request, res: Response, next: NextFunction) => {
   const dataDir = path.join(__dirname, "..", "data");
