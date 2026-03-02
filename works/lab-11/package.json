@@ -1,0 +1,36 @@
+{
+  "name": "lab-11",
+  "version": "1.0.0",
+  "description": "Lab 11 ",
+  "homepage": "https://github.com/alexxbez/tc2005b#readme",
+  "bugs": {
+    "url": "https://github.com/alexxbez/tc2005b/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexxbez/tc2005b.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "js"
+  ],
+  "license": "MIT",
+  "author": "alexx",
+  "type": "commonjs",
+  "main": "app.ts",
+  "scripts": {
+    "start": "ts-node app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
