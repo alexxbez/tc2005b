@@ -353,6 +353,8 @@ Un sistema de gestión de base de datos consiste en una colección de datos y un
 
 Es un método y diagrama que nos permite diseñar bases de datos de una buena manera. Un modelo entidad relación se compone de ciertos elemetos, los cuales son explicados a continuación.
 
+Es un modele de análisis de apoyo a la elaboración de modelo de persistencia. En este modelo siempre estoy pensando en el tiempo.
+
 === Entidades
 
 Representan el objeto básico de nuestro diagrama, y se refieren a cualquier objeto del mundo real sobre el cual queremos tener información. Se representa como un rectángulo.
@@ -452,3 +454,81 @@ Las entidades con *relaciones ISA* son 1:1, sin embargo su mapeo es un caso part
 Para el caso de las *entidades débiles*, la entidad fuerte de la que dependen le hereda su llave primaria, similar al caso anterior. Sin embargo, tal entidad débil ya tiene un identificador único, por lo que su llave primaria se vuelve la concatenación de la llave primaria heredada con el identificador original.
 
 Finalmente, el caso de los *roles* es muy similar. Secillamente se considera que es la misma entidad independiente del rol, y dentro de la llave foránea (que sería la llave primaria de una intidad igual) se especifíca el rol que tal entidad foránea juega. Para asociaciones de N:N se sigue el mismo procedimiento, en donde se crea una tabla extra.
+
+== Procedimiento para Elaborar una BD
+
++ Elaborar diagrama de contexto
++ Elaborar MER (análisis, modelo conceptual)
++ Traducir a ER (diseño, modelo lógico)
++ Construir la BD (construcción, modelo físico)
++ Cargar tablas (a mano, importar archivos, automatizar  registros)
++ Convertir datos en información (generar reportes)
+
+= UML
+
+== Diagramas de Secuencia
+
+Es un diagrama de interacción especial que muestra una interacción o un conjunto de objetos con sus relaciones y los mensajes que hay entre ellos. Tiene un énfasis en ua ordenación temporal.
+
+Este diagrama está compuesto por dos dimensiones: en la vertical se encuentra la dimensión temporal, y en la horizontal se encuentran las instancias de los objetos.
+
+#figure(
+  image("img/seqdig.svg")
+)
+
+Nosotros utilizaremos el diagrama de secuencia para describir los métodos particulares de una clase. A diferencia de un diagrama de casos de uso, el diagrama de secuencia contiene el detalle de la implementación, lo que incluye los *objetos* que se utilizarán y los *mensajes* intercambiados por los objetos.
+
+Estos pueden ser utilizados de dos formas, de instancia y genéricos. De instancia describen un caso de uso, y genéricos la interacción entre varios.
+
+=== Objetos
+
+Se representan en un rectángulo, con el símbolo `:` como prefijo. Cuentan con una línea discontínua vertical que denota la existencia del objeto, y se le puede superponer un rectángulo para indicar que en esa ventana de tiempo el objeto ejecuta una acción.
+
+#figure(
+  image("img/objetos.png")
+)
+
+Dentro de un flujo se puede especificar la creación o destrucción de un objeto con las palabras `<<creates>>` y `<<destroys>>`.
+
+=== Flujos
+
+Existen tre tipos de flujos, que se representan con flechas. 
+
++ El flujo síncrono, con una flecha continua con cabeza llena.
+  #figure(
+    image("img/sincrono.png")
+  )
++ El flujo asíncrono, con una flecha contínua con cabeza abierta.
+  #figure(
+    image("img/asincrono.png")
+  )
++ El retorno de una llamada, con una flecha discontínua con cabeza abierta.
+  #figure(
+    image("img/return.png")
+  )
+
+=== Operadores
+
+Existen varios operadores y fragmentos combinados dentro de este tipo de diagramas. Se componen del operador, la guarda y el marco.
+
+#figure(
+  image("img/operator.png")
+)
+
+Los operadores más comunes son 
+
+- Alternativa (alt): Modela un if else. La elección se pone en la guarda.
+- Opción (opt): Equivale a un alt pero solo con un fragmento. Modela un switch.
+- Bucle (loop): El fragmento se ejecuta varias veces, la guarda indica la condición.
+- Diagrama de Secuencia (sd): Le da un nombre al diagrama.
+- Referencia (reg): Se refiere a otro diagrama de secuencia aparte.
+  #figure(
+    image("img/ref.png")
+  )
+
+- Paralelo (par): cada fragmento sucede en paralelo.
+- Región crítica (critical): Solo se puede tener un proceso ejecutando.
+
+= Entrevistas
+
+Necesitan contener el marco teórico, la aplicación del concepto en mi proyecto, y las áreas de oportunidad que hubieron.
