@@ -266,6 +266,54 @@ Must include a description of the project, the people responsible, budget and ti
 
 There must also be milestones that help divide the project and get tangible results, as well as knowing exactly how bad you are developing.
 
+== Comunicación
+
+La comunicación es otro aspecto realmente importante a la hora de gestionar proyectos. Hay varias metodologías para realizar esta tarea, pero se pueden identificar los siguientes pasos.
+
+- Identificar a los interesados
+- Planear la comunicación
+- Distribuir la información
+- Administrar las expectativas de los interesados
+- Reportar el desempeño
+
+La comunicación tiene varias dimensiones. Existe la comunicación interna entre los colaboradores del proyecto y la externa entre el equipo y los interesados. Existe la comunicación formal y la informal, así como la oficial y la no oficial. También está la verbal y la no verbal, y la escrita y oral.
+
+Algunos ejemplos de esto  pueden ser la buena escucha, la investigación, la validación de datos, la *administración de expectativas*, la persuación y negociación, resumir y parafrasear lo que entendemos, y también proponer ideas y los siguientes pasos.
+
+=== Identificar a los interesados
+
+Este es un paso crítico y debe de ser realizado lo antes posible en el desarrollo del proyecto. Esto nos permite conocer realmente que es lo que quieren y conocer sus intereses para poder desarrollar una estrategia para atender sus necesidades. La idea es *maximizar la influencia positiva* y *minimizar la resistencia*. 
+
+Para esto es muy útil utilizar una matríz de los interesados donde se especifique que tanto poder o autoridad tienen en el proyecto, así como cuanto interés tienen en este.
+
+#figure(
+  image("img/matrix.png")
+)
+
+Sobre todo es importante definir estrategias para poder ganar su apoyo o reducir su resistencia.
+
+=== Planear la comunicación
+
+Este paso también es crucial. Es muy complicado que se puedan conseguir los objetivos de comunicación si no se tiene un plan de comunicación, ya que no todos cuentan con el mismo compromiso ni los mismos tiempos.
+
+Este plan busca responder a preguntas como ¿quién necesita la información?, ¿cuándo necesita la información?, ¿cómo se le van a entregar? y finalmente ¿quién la va a entregar?
+
+=== Distribuir la información
+
+Ahora, también es muy importante saber la forma en la que se va a entregar esa información. Esto es la forma de las reuniones, las presentaciones, pero también engloba el estilo que se va a utilizar. La idea es que exista una estandarización para que no sea complicado recordarlo y además sea consisente para no requerir tener que adaptarse a varios formatos distintos.
+
+También se debe de almacenar la retroalimentación de los interesados, así como las lecciones aprendidas.
+
+=== Administración de las expectativas
+
+Esto es para atender las necesidades de los interesados. También incluye la comunicación para negociar y manejar las expectativas de los interesados, la explicación y aclaración de las inquietudes de una forma temprana, y también la resolución de problemas como son las propuestas de cambio.
+
+=== Reportar el diseño
+
+Finalmente es importante reportar el desempeño. Esto se logra con reportes de estado, mediciones de avance y estimaciones. También es importante tener una comparación de estas estimaciones contra el avance actual.
+
+También es importante dar a conocer los pasos que siguen, es decir lo que el equipo tiene planeado hacer después (como una sección de next steps).
+
 == Addendum
 
 - The people *interested* in the project are those who benefit and are affected by it.
@@ -482,7 +530,7 @@ Estos pueden ser utilizados de dos formas, de instancia y genéricos. De instanc
 
 === Objetos
 
-Se representan en un rectángulo, con el símbolo `:` como prefijo. Cuentan con una línea discontínua vertical que denota la existencia del objeto, y se le puede superponer un rectángulo para indicar que en esa ventana de tiempo el objeto ejecuta una acción.
+Se representan en un rectángulo, con el símbolo `:` como prefijo. Cuentan con una línea discontínua vertical que denota la existencia del objeto, y se le puede superponer un rectángulo para indicar que en esa ventana de tiempo el objeto ejecuta una acción, es decir que tiene el control.
 
 #figure(
   image("img/objetos.png")
@@ -532,3 +580,4 @@ Los operadores más comunes son
 = Entrevistas
 
 Necesitan contener el marco teórico, la aplicación del concepto en mi proyecto, y las áreas de oportunidad que hubieron.
+
