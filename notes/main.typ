@@ -574,6 +574,51 @@ Finalmente existe el teta join, el cual es un operador binario que no tiene rest
 
 *¿Cómo se especifíca el teta join en SQL?*
 
+== SQL
+
+El sintáxis básico de una consulta en SQL es el siguiente:
+
+```sql
+SELECT columnas
+FROM tablas
+WHERE condicion
+```
+
+También se puede hacer uso de funciones agregadas, las cuales nos dan una estructura como la siguiente:
+
+```sql
+SELECT columnas
+FROM tablas
+WHERE condicion
+GROUP BY columnas que agrupan
+HAVING condiciones sobre funciones agregadas
+ORDER BY columna por la que ordenar
+```
+
+Existe una diferencia entre where y having. Where filtra los registros de la tabla, mientras que having filtra las funciones agregadas.
+
+Las funciones agregadar que existen son las siguientes:
+
+```
+SUM(expresión) Suma de la expresión.
+AVG(expresión) Promedio de la expresión
+MIN(expresión) Mínimo de la expresión
+MAX(expresión) Máximo de la expresión
+COUNT(*) Número de tuplas (renglones)
+COUNT(expresión) número de renglones en los que la expresión es no nula.
+STD(expresión) Desviación estándar de la expresión
+```
+
+Existen generalmente dos maneras de replicar los joins de álgebra relacional en SQL. La primera forma es utilizando la clausula where para especificar que se busca que las llaves foráneas coincidan. 
+
+La segunda forma es utilizando la sintáxis especial para los joins. Cabe aclarar que no todos los tipos de joins están disponibles en todos los DBMSs.
+
+#figure(
+  image("img/joins.png")
+)
+
+*¿Qué funciones extra existen en sql, como las funciones now, etc?*
+
 = UML
 
 == Diagramas de Secuencia
