@@ -512,11 +512,73 @@ Finalmente, el caso de los *roles* es muy similar. Secillamente se considera que
 + Cargar tablas (a mano, importar archivos, automatizar  registros)
 + Convertir datos en información (generar reportes)
 
+== Álgebra Relacional
+
+El álgebra relacional es una rama de las matemáticas aplicada en las bases de datos relacionales, ya que nos permite manejar conjuntos de datos.
+
+Existen algunos conceptos importantes:
+
+$ A &= {a, b, c} \ B &= {suit.heart, suit.spade, suit.club, suit.diamond} \ C &= {1, 2, 3} $
+
+La cantidad de elementos que puede asumir o tomar un conjunto se le denomina como dominio. Una relación se ve de la manera $(A, B, C)$, dónde estos conjuntos toman un valor específico.
+
+Más formalemente, una relación es un subconjunto del producto cartesiano de los conjuntos denotado como:
+
+$ A times B times C = {(a, suit.heart, 1), (a, suit.heart, 2), (a, suit.heart, 3), ...} $
+
+Es decir, un subconjunto de todas las diferentes combinaciones que existen entre los conjuntos.
+
+=== Llaves
+
+Cada tabla, o conjunto de relaciones tiene debe de ser identificable del resto. Es debido a esto que toda tabla debe de contar con una llave primaria.
+
+Ciertas tablas tienen una sola llave primaria posible, mientras que otras tienen varias. Cualquier posible llave primaria que no se haya utilizado como tal se le considera una llave alterna. Una llave primaria puede ser una llave simple si solo la compone una columna, o compuesta si la componen varias columnas.
+
+No se puede que una llave primaria tome un valor nulo.
+
+También existen las llaves foráneas, que son llaves que hacen referencia a las llaves primarias de otra relación (tabla). Estas llaves pueden ser nulas, pero si tienen un valor debe de ser un valor que haga referencia a la llave primaria de otra tupla, no se puede que apunten a algo que no existe.
+
+=== Operaciones
+
+Al tener llaves primarias y foráneas, las cuales tienen restricciones adicionales, es necesario contar con ciertas operaciones para no romper ninguna de las restricciones.
+
+Cuando se quiere eliminar un registro dentro de una tabla, y ese registro tiene su llave primaria referenciada en otras tablas, es necesario seguir alguno de estas operaciones para asegurar la integridad de la información.
+
+Se puede restristringir la operación, de modo que la operación no pueda ser realizada hasta que no exista ninguna referencia al registro.
+
+Se puede realizar una operación en cascada, de modo que se elimine el registro y también todos los registros que hagan referencia a el mismo.
+
+Se pueden poner todas las referencias a esa tabla como nulos, aunque es posible que con esto se rompa otra restricción. 
+
+Se puede poner un valor por defecto a los registros que referencian a esa tabla.
+
+También se puede hace que se genere una operación predefinida por el usuario.
+
+=== Alg Relacional
+
+Es el álgebra que se puede efectuar en las relaciones. Es muy similas (quizá el mismo) que el álgebra en conjuntos.
+
+La primera operación que se puede realizar es la unión. Es un operador binario que actúa en relaciones con un mismo dominio y grado. Se denota con el símbolo $union$.
+
+También existe la intersección, que también es un operador binario que requiere de un mismo domino y grado. Se denota con el símbolo $inter$.
+
+La diferencia se refiere a un operador binario que de igual manera requiere de un mismo dominio y grado, que regresa todos los registros en la primera relación que no se encuentran en la segunda relación. Se denota con el símbolo $-$.
+
+La proyección es un operador que filtra las columnas. Este es un operador unario en el que se especifica qué columnas se quieren obtener y solo regresa las pedidas. Se denota como $pi_(s e l e c t)$.
+
+Existe también en operador de selección, el cual filtra los registros o tuplas de una relación. También es un operador unario. Se le denota como $sigma_(c o n d)$.
+
+Hay dos tipos de operadores especiales. El primero es el join natural. Es un operador binario cuya única restricción es que exista al menos una columna igual en ambas relaciones. Este operador devuelve todas las tuplas en las que la columna igual coincide en valor. Se le denota con el símbolo ><.
+
+Finalmente existe el teta join, el cual es un operador binario que no tiene restricciones. Sin embargo, el teta join requiere de una condición, la cual debe de relacionar ambar tablas. Se denota con la misma notación que el join natural, pero se le indica la condición en el subíndice.
+
+*¿Cómo se especifíca el teta join en SQL?*
+
 = UML
 
 == Diagramas de Secuencia
 
-Es un diagrama de interacción especial que muestra una interacción o un conjunto de objetos con sus relaciones y los mensajes que hay entre ellos. Tiene un énfasis en ua ordenación temporal.
+Es un diagrama de interacción especial que muestra una interacción o un conjunto de objetos con sus relaciones y los mensajes que hay entre ellos. Tiene un énfasis en una ordenación temporal.
 
 Este diagrama está compuesto por dos dimensiones: en la vertical se encuentra la dimensión temporal, y en la horizontal se encuentran las instancias de los objetos.
 
