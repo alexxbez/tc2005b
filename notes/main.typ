@@ -684,6 +684,38 @@ Los operadores más comunes son
 - Paralelo (par): cada fragmento sucede en paralelo.
 - Región crítica (critical): Solo se puede tener un proceso ejecutando.
 
+== Generar Pruebas a Partir de Casos de Uso
+
+Para poder generar pruebas a partir de casos de uso es importante primero tener los casos de uso bien identificados, pero también haberlos descrito e incluso detallado.
+
+A esto se refiere la descripción que incluye lo las pre y post condiciones, los puntos de extensión, etc. Al detalle se refiere el flujo de actividades que va a seguir en el caso de uso. Esto puede ser en texto, o bien utilizando un diagrama de actividades.
+
+Adicionalmente a esto, se deben de identificar todos los escenarios por los que un usuario puede ir dentro del caso de uso. Con esto se refiere a identificar las rutas que se pueden seguir durate el caso de uso, que combinación de rutas entre el flujo básico y los flujos alternos existen, de modo que se tengan contempladas todas las rutas y combinaciones entre flujos posibles.
+
+Ahora sí, teniendo estas cosas se pueden generar las pruebas. El proceso se divide en tres pasos:
+
+- Generar todos los escenarios
+- Por cada escenario identificar al menos una prueba y las condiciones que hacen que se ejecute
+- Por cada prueba identificar los valores para la prueba
+
+=== General los Escenarios
+
+Este paso es redundante si ya se identificaron previamente, pero en caso de que no este es el momento para identificar los escenarios dentro de un caso de uso.
+
+=== Identificar los Casos de Prueba
+
+En este paso se identifican los casos de prueba. Esencialmente, se toma cada escenario y se juega con las posibilidades. ¿Qué pasa si esta condición no se ha complido? ¿Si el usuario no está autenticado? etc. Es útil utilizar una matríz con las condiciones. En este paso solo se identifica si las condiciones son válidas, inválidas, o si no es aplicable. Todavía no se le dan valores específicos.
+
+#figure(
+  image("img/testcase.png")
+)
+
+*¿Qué tan relevante es esto hoy en día? La información es de hace más de 20 años.*
+
+=== Identificar Valores
+
+Finalmente, el último paso es darle valores específicos a todas las Vs e Is, para tener valores concretos con los que se puedan realizar las pruebas.
+
 = Entrevistas
 
 Necesitan contener el marco teórico, la aplicación del concepto en mi proyecto, y las áreas de oportunidad que hubieron.
