@@ -1,0 +1,27 @@
+nav.navbar.is-light
+  .navbar-brand
+    a.navbar-item(href="/")
+      strong Tower of Hanoi
+
+  .navbar-menu
+    .navbar-end
+
+      if isLoggedIn
+        .navbar-item
+          span Hello #{username}
+
+        .navbar-item
+          form(action="/user/logout", method="GET")
+            button.button.is-danger(type="submit")
+              | Logout
+
+      else
+        .navbar-item
+          form(action="/user/login", method="GET")
+            button.button.is-link(type="submit")
+              | Login
+
+        .navbar-item
+          form(action="/user", method="GET")
+            button.button.is-success(type="submit")
+              | Register

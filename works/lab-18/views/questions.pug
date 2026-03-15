@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Hello Bulma!
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css")
+
+  body
+    include partials/header
+    section.section
+      .container
+        h1.title Preguntas
+
+        .card
+          header.card-header
+            p.card-header-title ¿Qué otras formas de autentificación existen?
+
+          .card-content
+            .content
+              | Además de la autentificación por medio de tokens de variables de sesiones, también se puede autentificar por medio de JWT, que es un estándar de JSON Web Token. También se puede utilizar OAuth, que es una forma de login social en la que se utilizan provedores externos como google, github o facebook. También se puede lograr sin contraseñas utilizando el correo, así como autenticación de multi factor y con una llave de API.
+

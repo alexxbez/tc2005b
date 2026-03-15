@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Register
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css")
+
+  body
+    section.section
+      .container
+        h1.title Register
+
+        if exists
+          .notification.is-danger
+            | User already exists.
+
+        form(action="/user", method="POST")
+          .field
+            label.label Username
+            input.input(
+              type="text",
+              placeholder="Username",
+              name="name",
+              required
+            )
+
+          .field
+            label.label Password
+            input.input(
+              type="password",
+              placeholder="Password",
+              name="password",
+              required
+            )
+
+          .field.is-grouped
+            button.button.is-link(type="submit") Register
+
+        .buttons.mt-4
+          form(action="/user/login", method="GET")
+            button.button(type="submit") Login
