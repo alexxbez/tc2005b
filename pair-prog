@@ -1,0 +1,9 @@
+- 882a6c957101a110a6c251c2fbdadde04e075a70: Ricardio, create db schema
+- 2d11f5c7be2a9ab502de1672ed0dcfda9113388b: Ricardo, register user use case
+- 4060cf7263035b6d11d105df54cd06573396e640: Ricardo, login use case
+- 83ce69425c650727f3f33aee9e9e376b9fcf5bd4: Diego, create branch use case
+- 4e44f10fd5ceb666610211cb69b1ed61e9d8b24b: Diego, get incoming orders
+- 1e2dfa8c9df579fc28d34e298cd38904e0ad636c: Darío, regiter reward
+- 24d33bb91bff879365d2484ca35bf373bac00322: Diego, get orders
+- 788a883552a75139bb3ff7d5ed60175f6f5d7a29: Diego, get orders
+- d21bd3dfe78a36cd6bf92eabb5509f2c5fdd9aa4: Diego, get orders
