@@ -1,0 +1,75 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Register Account
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css")
+
+  body
+    section.section
+      .container(style="max-width:500px")
+        h1.title Create an Account
+        p.subtitle Register a new user to use the system.
+
+        if exists
+          .notification.is-danger
+            strong Error:
+            |  User already exists
+
+        if imageRequired
+          .notification.is-danger
+            strong Error:
+            |  Profile image is required
+
+        form(action="/user", method="POST", enctype="multipart/form-data")
+          input(type="hidden", name="_csrf", value=csrfToken)
+
+          .field
+            label.label Username
+            .control
+              input.input(
+                type="text",
+                name="name",
+                placeholder="Choose a username",
+                required
+              )
+
+          .field
+            label.label Password
+            .control
+              input.input(
+                type="password",
+                name="password",
+                placeholder="Choose a password",
+                required
+              )
+
+          .field
+            label.label Role
+            .control
+              .select.is-fullwidth
+                select(name="role", required)
+                  option(value="") Select a role
+                  each role in roles
+                    option(value=role.id)= role.name
+
+          .field
+            label.label Profile Image
+            .control
+              input.input(
+                type="file",
+                name="archivo",
+                accept="image/*",
+                required
+              )
+
+          .field
+            .control
+              button.button.is-success.is-fullwidth(type="submit")
+                | Create Account
+
+        .has-text-centered.mt-4
+          p Already have an account?
+          form(action="/user/login", method="GET")
+            button.button.is-light(type="submit") Go to Login
