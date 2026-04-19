@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `img` text NOT NULL;

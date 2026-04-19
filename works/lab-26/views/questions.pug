@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Hello Bulma!
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css")
+
+  body
+    include partials/header
+    section.section
+      .container
+        h1.title Preguntas
+
+        .card
+          header.card-header
+            p.card-header-title ¿Qué otras formas de autentificación existen?
+
+          .card-content
+            .content
+              | El Control de Acceso Basado en Roles (RBAC) es un modelo de seguridad en el cual los permisos no se asignan directamente a los usuarios, sino a roles, y posteriormente los usuarios son asignados a esos roles. Esto nos permite que nuestro sistema sea extensible y seguro.
+
+        .card
+          header.card-header
+            p.card-header-title Investiguen y describan 2 sistemas, uno que aplique RBAC y uno que no. Realicen un análisis de las ventajas y desventajas de cada uno con respecto al control de acceso.
+
+          .card-content
+            .content
+              | Un sistema que utiliza rbac es github. Dentro de este sitema se pueden observar los diferentes tipos de roles que determinan el acceso a un repositorio. Existe un propietario, pero también gente que mantiene al proyecto, desarrolladores, e invitados. Y cada uno de estos roles tienen sus propios privilegios. Las ventajas son que permite administar y gestionar más fácilmente lor permisos. También es muy seguro, aunque es rígido y un poco complejo. Por otra parte, un sistema que no implementa rbac es unix con su modelo de permisos de archivos. Solo existen tres tipos de acceso, propietario, grupo y otros. Y solo hay tres permisos, leer, escribir y ejecutar. Esto es más simple de implementar, pero no es extensible y tiene menos flexibilidad.
+

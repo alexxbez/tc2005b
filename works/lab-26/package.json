@@ -1,0 +1,55 @@
+{
+  "name": "lab-11",
+  "version": "1.0.0",
+  "description": "Lab 11 ",
+  "homepage": "https://github.com/alexxbez/tc2005b#readme",
+  "bugs": {
+    "url": "https://github.com/alexxbez/tc2005b/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexxbez/tc2005b.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "js"
+  ],
+  "license": "MIT",
+  "author": "alexx",
+  "type": "commonjs",
+  "main": "app.ts",
+  "scripts": {
+    "start": "ts-node app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "./clean.sh",
+    "seed": "ts-node scripts/seed.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.8.0",
+    "body-parser": "^2.2.2",
+    "csurf": "^1.11.0",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.1",
+    "drizzle-seed": "^0.3.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "multer": "^2.1.1",
+    "pg": "^8.20.0",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/csurf": "^1.11.5",
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.18.2",
+    "@types/multer": "^2.1.0",
+    "@types/node": "^25.3.3",
+    "@types/pg": "^8.18.0",
+    "drizzle-kit": "^0.31.9",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Bible Query
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css")
+
+  body
+    include partials/header
+
+    section.section
+      .container(style="max-width:760px")
+        h1.title Query a Bible Verse
+        p.subtitle Enter a book, chapter, and optional verse.
+
+        if error
+          .notification.is-danger #{error}
+
+        form(action="/bible", method="POST")
+          input(type="hidden", name="_csrf", value=csrfToken)
+
+          .field
+            label.label Book
+            .control
+              input.input(type="text", name="book", placeholder="john", value=query && query.book ? query.book : "", required)
+
+          .field.is-grouped
+            .control.is-expanded
+              label.label Chapter
+              input.input(type="number", min="1", step="1", name="chapter", placeholder="3", value=query && query.chapter ? query.chapter : "", required)
+
+            .control.is-expanded
+              label.label Verse (optional)
+              input.input(type="number", min="1", step="1", name="verse", placeholder="16", value=query && query.verse ? query.verse : "")
+
+          .field
+            .control
+              button.button.is-link(type="submit") Search
+
+        if result
+          article.message.is-info.mt-5
+            .message-header
+              p #{result.reference}
+            .message-body
+              pre(style="white-space: pre-wrap; font-family: inherit;") #{result.text}
+
