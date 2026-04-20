@@ -621,9 +621,69 @@ La segunda forma es utilizando la sintáxis especial para los joins. Cabe aclara
 
 *¿Qué funciones extra existen en sql, como las funciones now, etc?*
 
-=== Transacciones
+== Stored Procedures and Functions
+
+Dentro de un DBMS se pueden tener stored procedures y stored functions. 
+
+Como sus nombres indican, estos son funciones y procedimientos que son almacenados dentro del DBMS, y que pueden ser invocados posteriormente. Naturalmente, antes de entender la ventaja de estos, es importante entender la diferencia entre un procedimiento y una funcion.
+
+=== Funciones vs Procedimientos
+
+La funcion es un concepto basico en matematicas, que es un mapeo entre un dominio y una imagen. Esta definicion no es del todo util para el programador, sin embargo es necesario entender que, por definicion, exite una transformacion. Una funcion requiere de tanto un dominio como una imagen, y la transformacion actua sobre el dominio para producir la imagen. 
+
+$ f: D arrow.r.bar I $
+
+Esto quiere decir que para cada elemento dentro de $D$, existe otro elemento dentro de $I$ tal que $f(d) = i$. 
+
+Naturalmente podemos concluir que una funcion es aquella que tiene ambos una entrada y una salida. Este concepto es muy utilizado dentro del paradigma de la programacion funcional.
+
+Por otro lado, un procedimiento es aquel no no necesariamente tiene una entrada o salida. Es posiblemente la primera definicion de funcion que se le da a una persona al aprender a programar, y es la manera principal en la que los programadores reutilizan codigo.
+
+=== Ventajas y Desventajas
+
+Personalmente siento que las ventajas de utilizar stored procedures son pocas, y deberian ser utilizadas como excepcion y no como regla. 
+
+La primera ventaja es que son mas eficientes, o al menos ligeramente mas eficientes. Esto debido a dos cosas. 
+
+Primero, son menos costosas para enviar a traves de la red, esto debido a que la cantidad de informacion disminuye considerablemente. Debido a que estas instrucciones se encuentran dentro del DBMS, solo se debe de transmitir la llamada o invocacion al stored procedure/function, y este solo envia de vuelta el resultado. Esto a comparacion de enviar una query completa a la base de datos.
+
+Segundo, cuando el DBMS recibe una query, tienen que interpretar (compilar y ejecutar) la query. Sin embargo, muchos DBMS compilan las queries, por lo que cuando llega una invocacion a al procedimiento, este ya no debe de ser compilado y puede ser ejecutado directamente.
+
+Y la segunda ventaja que veo, es que se puede restringir el acceso a ciertos usuarios. Puede ser que algun equipo tenga acceso a ciertos stored procedures que actuan en ciertas tablas, pero ellos no tienen acceso a las tablas mismas. Los stored procedures nos ayudan a tener una mejor seguridad de acceso a la base de datos.
+
+Sin embargo, personalmente veo muchas desventajas tambien. 
+
+Delegar reglas y logica del negocio a la base de datos no me parece la mejor decision arquitectonica. Esto tambien parece que seria mas dificil de probar. Asi mismo, el equipo puede olvidar que estos procedimientos existen y pueden generar bugs que serian muy complicados de encontrar.
+
+Realmente no provee un encapsulamiento necesario. Una aplicacion bien hecha ya deberia de tener una capa de encapsulamiento para la base de datos, ya sea un modelo o un repositorio, por lo que el encapsulamiento deberia suceder ahi, y no dentro de la base de datos.
+
+Esto es menos mantenible. Primero, se requiere estar checando el DBMS. No solo eso, sino que la aplicacion se vuelve dependiente del DBMS, lo que causa que no se pueda cambiar a otra base de datos sin tener que generar muchas migraciones y cambiar muchos stored procedures, ya que seguramente las sintaxis y forma de operar no son las mismas.
+
+== Transacciones
 
 Es una de las habilidades y funcionalidades fundamentales de un gestor de base de datos, y es la herramienta que nos permite mantener la integridad de nuestros datos y de una manera correcta.
+
+En un alto nivel, las transacciones realizan prodecimientos, ya sean queries a la base de datos, inserciones, o incluso stored procedures, de una manera atomica. Esto quiere decir que, todas estas instrucciones son tomadas como una sola entidad, un atomo, y solo se efectua si todas fueron exitosas, y de no ser asi se realiza un rollback, lo que nos permite mantener nuestra base de datos en un estado correcto.
+
+Mas formalmente, las transacciones estan definidas por las propiedades conocidas como ACID (atomicidad, coherencia, aislamiento y durabilidad).
+
+=== Atomicidad
+
+Se refiere a que la transaccion es una unidad atomica de trabajo, es decir, no se puede dividir, por lo que actua como una unidad. Pare efectos practicos significa que, o se realzan todas las tareas dentro de la transaccion, o no se realiza ninguna.
+
+=== Coherencia
+
+Cuando una transaccion termina, la base de datos debe de quedar en un estado coherente. Esto quiere decir que todas las reglas transaccionales y mecanismos internos como indices de arbol B o listas doblemente ligadas deben de terminar en un estado correcto y valido al finalizar la transaccion.
+
+=== Aislamiento
+
+Si existe otro proceso que requiere ver de leer o escribir a la base de datos, este solo puede ver el estado antes de la transaccion o despues, pero no durante. Esto quiere decir que la transaccion no expone el estado de la base de datos hasta que esta haya sido terminada, ya que de no ser asi se podria operar en un estado invalido. 
+
+=== Durabilidad
+
+Una vez que la transaccion termina, los efectos se "commitean" y se hacen de una forma permanente.
+
+*realmente no tengo dudas sobre las transacciones*
 
 == Normalizacion
 
@@ -753,6 +813,42 @@ En este paso se identifican los casos de prueba. Esencialmente, se toma cada esc
 === Identificar Valores
 
 Finalmente, el último paso es darle valores específicos a todas las Vs e Is, para tener valores concretos con los que se puedan realizar las pruebas.
+
+== Diagrama de Estado
+
+Es un poco redundante escribir mas sobre diagramas de estado. Sin embargo, es importante al menos mostrar la sintaxis para estos.
+
+#figure(
+  image("img/state.png")
+)
+
+Por definicion, un automata debe de tener un estado inicial. Este es denotado por el circulo negro. 
+
+A las transiciones entre etados se les denomina eventos, y de igual manera se debe de especificar cerca de la flecha.
+
+Finalmente, se le puede asignar una actividad a cada estado. Una actividad es una accion que se esta realizando dentro de tal estado.
+
+Cabe aclarar que dentro de la clase no vimos si un automata debe de tener estados finales o aceptantes. Sin embargo, me parece deberian de tener, ya que, tomado como ejemplo una transaccion dentro de una base de datos, puede que esta pase por muchos estado, pero finalmente queremos que termine en un estado valido, de otra manera la transaccion no podria ser completada. 
+
+*Existe una forma de denotar estados de aceptacion?*
+
+== Diagramas de Despliegue
+
+Estos diagramas representan la arquitectura de ejecucion de un sistema. 
+
+Tienen dos componentes, los nodos y los artefactos.
+
+Los nodos son los tipos de recursos computacionales que se pueden tener, y sobre los que se pueden desplegar artefactos, que veremos mas adelante. Para fines de la materia nos enfocamos en dos posibles estereotipos de nodos: los dispositivos, denotados como `<<device>>`, y los entornos de ejecucion, denotados como `<<execution environment>>`. 
+
+Estos nodos pueden albergar otros nodos dentro, de modo que un dispositivo pueda albergar un entorno de ejecucion.
+
+Los artefactos representan la especificacion de un elemento concreto y real. Usualmente son los archivos, como los ejecutables, documentos, archivos de configuracion, etc. Tambien pueden ser las tablas de la base de datos, etc. Los artefactos son los que se despliegan dentro de los nodos. 
+
+Adicionalmente, tambien tenemos lineas que indican vias de comunicacion entre nodos. En estas lineas se debe de especificar el metodo o protocolo por el cual se estan comunicando.
+
+#figure(
+  image("img/deploy.png", width: 100%)
+)
 
 = Entrevistas
 
