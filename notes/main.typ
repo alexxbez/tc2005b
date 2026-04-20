@@ -314,6 +314,8 @@ Finalmente es importante reportar el desempeño. Esto se logra con reportes de e
 
 También es importante dar a conocer los pasos que siguen, es decir lo que el equipo tiene planeado hacer después (como una sección de next steps).
 
+*Pregunta:* Que literatura existe para aprender esto aparte del pmbok?
+
 == Addendum
 
 - The people *interested* in the project are those who benefit and are affected by it.
@@ -618,6 +620,42 @@ La segunda forma es utilizando la sintáxis especial para los joins. Cabe aclara
 )
 
 *¿Qué funciones extra existen en sql, como las funciones now, etc?*
+
+=== Transacciones
+
+Es una de las habilidades y funcionalidades fundamentales de un gestor de base de datos, y es la herramienta que nos permite mantener la integridad de nuestros datos y de una manera correcta.
+
+== Normalizacion
+
+La idea de este concepto es eliminar lo mas posible las anomalias dentro de una base de datos, lo cual permite que esta sea modificada mas facilmente. Se mantiene la integridad de los datos para asegurarse que la base de datos no puede estar en un estado invalido, o que  no corresponde con el mundo real.
+
+Existen pasos para normalizar una base de datos, dichos pasos dados por las formas normales. Sin embargo, una base de datos bien diseñada no deberia de requerir de normalizacion. Solo una base de datos que no fue construida de manera correcta es normalizada. Con experiencia es posible crear bases de datos que naturalmente ya son normales.
+
+Sin embargo, tambien es importante conocer las caracteristicas de las primeras tres formas normales para observar y decidir si mi base de datos es correcta o falta mejorarla.
+
+=== 1FN
+
+Esta es la primera forma normal. Se caracteriza por tener atributos que poseen valores simples y no tienen varios valores por campo. Las columnas tienen nombres unicos y los registros no son los mismos o duplicados.
+
+Es muy natural que las bases de datos ya se encuentren en esta primera forma normal, y de no serlo no es tan complicado llegar a esta forma.
+
+=== 2FN
+
+Es en la que existe una dependencia funcional, en la que todos los atributos de una relacion dependen de un atributo en especifico. 
+
+Esto parece un poco complejo, pero realmente se refiere a que todas las entidades cuentan con una llave primaria, de la cual todos los demas atributos dependen, ya que es la que los identifica con respecto al resto de registros.
+
+=== 3FN
+
+Esta tercera forma normal busca eliminar las dependencias transitivas. Esencialmente, en el paso pasado se definio que todas las entidades deben de tener una llave primaria que las identifique. Este paso lo que busca es asegurarse que todos los atributos de una entidad en particular dependan, o se refieran, a la llave primaria. 
+
+Es decir, debe de existir una relacion semantica directa entre una llave primaria y sus atributos. 
+
+=== Demas Formas
+
+Existen mas formas normales, sin embargo, no creo que se crucial entederlas. Es importante conocer que existen, pero para la mayoria de los casos estas no son relevantes, y con tener una base de datos en la tercera forma normal es mas que suficiente.
+
+*Cuando es valioso pasar de la tercera forma normal? En que tipo de proyecto?*
 
 = UML
 
